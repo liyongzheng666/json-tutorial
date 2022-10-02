@@ -7,6 +7,7 @@ static int main_ret = 0;
 static int test_count = 0;
 static int test_pass = 0;
 
+//HACK: 这个地方->\<-这个符号是为了表示说明后面的内容仍然在一行，写这种简单语句！
 #define EXPECT_EQ_BASE(equality, expect, actual, format) \
     do {\
         test_count++;\

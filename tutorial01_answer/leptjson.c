@@ -12,6 +12,7 @@ static void lept_parse_whitespace(lept_context* c) {
     const char *p = c->json;
     while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r')
         p++;
+    //[ ]:这里的p是指针的地址，就是去除真正数据前面的那些空白符号
     c->json = p;
 }
 
@@ -55,6 +56,7 @@ static int lept_parse_value(lept_context* c, lept_value* v) {
 int lept_parse(lept_value* v, const char* json) {
     lept_context c;
     int ret;
+    //[ ]: assert函数是表示，如果括号内的值为0,直接退出程序
     assert(v != NULL);
     c.json = json;
     v->type = LEPT_NULL;
